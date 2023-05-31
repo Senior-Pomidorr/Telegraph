@@ -82,7 +82,6 @@ class RegisterViewController: UIViewController {
             registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             registerButton.heightAnchor.constraint(equalToConstant: 60),
             
-        
         ])
         
     }
