@@ -9,7 +9,6 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    
     private let emailButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +50,7 @@ class RegisterViewController: UIViewController {
         button.layer.cornerRadius = 30
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BrandLightBlue")
@@ -76,14 +75,13 @@ class RegisterViewController: UIViewController {
             passwordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             passwordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             passwordButton.heightAnchor.constraint(equalToConstant: 60),
-        
+            
             registerButton.topAnchor.constraint(equalTo: passwordButton.bottomAnchor, constant: 16),
             registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             registerButton.heightAnchor.constraint(equalToConstant: 60),
             
         ])
-        
     }
     
 }

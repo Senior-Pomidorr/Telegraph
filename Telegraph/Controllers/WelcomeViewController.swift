@@ -20,7 +20,7 @@ class WelcomeViewController: UIViewController {
     }()
     
     private let buttonRegister: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Register", for: .normal)
         button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
@@ -30,7 +30,7 @@ class WelcomeViewController: UIViewController {
     }()
     
     private let buttonLogIn: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Log In", for: .normal)
         button.titleLabel?.textColor = .black
@@ -39,13 +39,11 @@ class WelcomeViewController: UIViewController {
         button.backgroundColor = .systemTeal
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         layout()
-
-       
     }
     
     func layout() {
@@ -67,9 +65,9 @@ class WelcomeViewController: UIViewController {
             buttonRegister.bottomAnchor.constraint(equalTo: buttonLogIn.topAnchor, constant: -10),
             buttonRegister.heightAnchor.constraint(equalToConstant: 60),
             buttonRegister.widthAnchor.constraint(equalTo: view.widthAnchor),
-           
+            
         ])
     }
-   
-
+    
+    
 }
