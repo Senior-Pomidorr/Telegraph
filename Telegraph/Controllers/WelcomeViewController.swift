@@ -19,17 +19,18 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private let buttonRegister: UIButton = {
+    private lazy var buttonRegister: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Register", for: .normal)
         button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 30)
         button.backgroundColor = UIColor(named: "BrandLightBlue")
+        button.addTarget(self, action: #selector(tapRegister), for: .touchUpInside)
         return button
     }()
     
-    private let buttonLogIn: UIButton = {
+    private lazy var buttonLogIn: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Log In", for: .normal)
@@ -37,8 +38,22 @@ class WelcomeViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 30)
         button.tintColor = .black
         button.backgroundColor = .systemTeal
+        button.addTarget(self, action: #selector(tapLogIn), for: .touchUpInside)
         return button
     }()
+    
+    @objc func tapRegister() {
+        let registerVC = RegisterViewController()
+        self.navigationController?.pushViewController(registerVC, animated: true)
+    }
+    
+    @objc func tapLogIn() {
+        let logVC = LoginViewController()
+        self.navigationController?.pushViewController(logVC, animated: true)
+        
+//        logVC.modalPresentationStyle = .automatic
+//        present(logVC, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

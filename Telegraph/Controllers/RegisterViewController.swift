@@ -54,8 +54,17 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BrandLightBlue")
+        setNavigationController()
         layout()
-        
+    }
+    
+    func setNavigationController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = UIColor(named: "BrandBlue")
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "BrandBlue")!]
+        navigationItem.title = "Register"
     }
     
     func layout() {

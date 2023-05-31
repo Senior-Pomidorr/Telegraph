@@ -26,7 +26,7 @@
 		0DB9229E2A2685C600A005ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DB922A12A2685C600A005ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DB922A32A2685C600A005ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DB922A92A2686AA00A005ED /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0DB922A92A2686AA00A005ED /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0DB922AB2A2686D200A005ED /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0DB922AD2A2686E500A005ED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0DB922AF2A2686F400A005ED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 				0DB922B12A26872700A005ED /* Controllers */,
 				0DB922B42A27A70800A005ED /* CustomCell */,
 				0DB9229E2A2685C600A005ED /* Assets.xcassets */,
-				0DB922B52A27BDD200A005ED /* Extensions.swift */,
+				0DB922B72A27E0C100A005ED /* Extensions */,
 				0DB922A02A2685C600A005ED /* LaunchScreen.storyboard */,
 				0DB922A32A2685C600A005ED /* Info.plist */,
 			);
@@ -93,6 +93,14 @@
 				0DB922B22A27A5BF00A005ED /* ChatTableViewCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		0DB922B72A27E0C100A005ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0DB922B52A27BDD200A005ED /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
