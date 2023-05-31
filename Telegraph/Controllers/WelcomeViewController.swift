@@ -9,13 +9,11 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    
-    
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Telegraph"
-        label.textColor = .blue
+        label.textColor = UIColor(named: "BrandBlue")
         label.font = .boldSystemFont(ofSize: 50)
         label.textAlignment = .center
         return label
@@ -24,36 +22,52 @@ class WelcomeViewController: UIViewController {
     private let buttonRegister: UIButton = {
        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.text = "Register"
+        button.setTitle("Register", for: .normal)
+        button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 30)
+        button.backgroundColor = UIColor(named: "BrandLightBlue")
         return button
     }()
     
     private let buttonLogIn: UIButton = {
        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.text = "LogIn"
+        button.setTitle("Log In", for: .normal)
+        button.titleLabel?.textColor = .black
+        button.titleLabel?.font = .systemFont(ofSize: 30)
+        button.tintColor = .black
+        button.backgroundColor = .systemTeal
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         layout()
 
        
     }
     
     func layout() {
-        view .addSubview(mainLabel)
+        view.addSubview(mainLabel)
+        view.addSubview(buttonRegister)
+        view.addSubview(buttonLogIn)
         
         NSLayoutConstraint.activate([
             
             mainLabel.widthAnchor.constraint(equalToConstant: 260),
             mainLabel.heightAnchor.constraint(equalToConstant: 80),
             mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mainLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        
-        
+            mainLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            buttonLogIn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            buttonLogIn.heightAnchor.constraint(equalToConstant: 60),
+            buttonLogIn.widthAnchor.constraint(equalTo: view.widthAnchor),
+            
+            buttonRegister.bottomAnchor.constraint(equalTo: buttonLogIn.topAnchor, constant: -10),
+            buttonRegister.heightAnchor.constraint(equalToConstant: 60),
+            buttonRegister.widthAnchor.constraint(equalTo: view.widthAnchor),
+           
         ])
     }
    
