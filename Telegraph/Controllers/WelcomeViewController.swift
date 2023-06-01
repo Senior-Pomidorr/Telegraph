@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController {
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Telegraph"
+//        label.text = "Telegraph"
         label.textColor = UIColor(named: "BrandBlue")
         label.font = .boldSystemFont(ofSize: 50)
         label.textAlignment = .center
@@ -58,7 +58,21 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        animationMainLabel()
         layout()
+    }
+    
+    func animationMainLabel() {
+        mainLabel.text = ""
+        var indexForLoop = 0.1
+        let titleText = "Telegraph"
+        for char in titleText {
+            Timer.scheduledTimer(withTimeInterval: 0.110 * indexForLoop, repeats: false) { timer in
+                self.mainLabel.text?.append(char)
+            }
+            indexForLoop += 1
+        }
+        
     }
     
     func layout() {
