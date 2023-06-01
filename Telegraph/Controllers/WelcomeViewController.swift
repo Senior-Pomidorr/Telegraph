@@ -72,7 +72,6 @@ class WelcomeViewController: UIViewController {
             }
             indexForLoop += 1
         }
-        
     }
     
     func layout() {
