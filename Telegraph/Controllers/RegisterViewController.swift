@@ -50,16 +50,16 @@ class RegisterViewController: UIViewController {
         button.layer.shadowOpacity = 0.2
         button.layer.shadowRadius = 30
         button.layer.cornerRadius = 30
-//        button.addTarget(self, action: #selector(auntificationPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(auntificationPressed), for: .touchUpInside)
         return button
     }()
     
-//    @objc func auntificationPressed() {
-//        let email = emailButton.text
-//        handle = Auth.auth().addStateDidChangeListener { auth, user in
-//          // ...
-//        }
-//    }
+    @objc func auntificationPressed() {
+        let email = emailTextField.text
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+          // ...
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
