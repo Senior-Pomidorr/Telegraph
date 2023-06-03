@@ -17,7 +17,8 @@
 		0DB922B02A2686F400A005ED /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922AF2A2686F400A005ED /* ChatViewController.swift */; };
 		0DB922B32A27A5BF00A005ED /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922B22A27A5BF00A005ED /* ChatTableViewCell.swift */; };
 		0DB922B62A27BDD200A005ED /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922B52A27BDD200A005ED /* Extensions.swift */; };
-		36767142D36FBCAC99FF6E90 /* libPods-Telegraph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA4C197AA1A89A60B48DD1F /* libPods-Telegraph.a */; };
+		0DD9D76D2A2A700E001B1F3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DD9D76C2A2A700E001B1F3D /* GoogleService-Info.plist */; };
+		33463C36212475E2B95E0E50 /* libPods-Telegraph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EAB06877361CCB0D437C36 /* libPods-Telegraph.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +34,10 @@
 		0DB922AF2A2686F400A005ED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0DB922B22A27A5BF00A005ED /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		0DB922B52A27BDD200A005ED /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		DFA4C197AA1A89A60B48DD1F /* libPods-Telegraph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telegraph.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7F6F8C7A503558AB7A10EC8 /* Pods-Telegraph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph.debug.xcconfig"; path = "Target Support Files/Pods-Telegraph/Pods-Telegraph.debug.xcconfig"; sourceTree = "<group>"; };
-		F605944185DC4D2D775BC333 /* Pods-Telegraph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph.release.xcconfig"; path = "Target Support Files/Pods-Telegraph/Pods-Telegraph.release.xcconfig"; sourceTree = "<group>"; };
+		0DD9D76C2A2A700E001B1F3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26EAB06877361CCB0D437C36 /* libPods-Telegraph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telegraph.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B3CC4B779182EFB6C7D2DF /* Pods-Telegraph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph.debug.xcconfig"; path = "Target Support Files/Pods-Telegraph/Pods-Telegraph.debug.xcconfig"; sourceTree = "<group>"; };
+		FB293DDAFE440C2368DFF6D3 /* Pods-Telegraph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph.release.xcconfig"; path = "Target Support Files/Pods-Telegraph/Pods-Telegraph.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36767142D36FBCAC99FF6E90 /* libPods-Telegraph.a in Frameworks */,
+				33463C36212475E2B95E0E50 /* libPods-Telegraph.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +58,7 @@
 				0DB922942A2685C300A005ED /* Telegraph */,
 				0DB922932A2685C300A005ED /* Products */,
 				54231272C1F8F5CF0D546902 /* Pods */,
-				ED40B9F6784B256748EE84E9 /* Frameworks */,
+				5DF41DFF6162B120C7D83122 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +81,7 @@
 				0DB922B72A27E0C100A005ED /* Extensions */,
 				0DB922A02A2685C600A005ED /* LaunchScreen.storyboard */,
 				0DB922A32A2685C600A005ED /* Info.plist */,
+				0DD9D76C2A2A700E001B1F3D /* GoogleService-Info.plist */,
 			);
 			path = Telegraph;
 			sourceTree = "<group>";
@@ -113,17 +116,16 @@
 		54231272C1F8F5CF0D546902 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E7F6F8C7A503558AB7A10EC8 /* Pods-Telegraph.debug.xcconfig */,
-				F605944185DC4D2D775BC333 /* Pods-Telegraph.release.xcconfig */,
+				40B3CC4B779182EFB6C7D2DF /* Pods-Telegraph.debug.xcconfig */,
+				FB293DDAFE440C2368DFF6D3 /* Pods-Telegraph.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		ED40B9F6784B256748EE84E9 /* Frameworks */ = {
+		5DF41DFF6162B120C7D83122 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DFA4C197AA1A89A60B48DD1F /* libPods-Telegraph.a */,
+				26EAB06877361CCB0D437C36 /* libPods-Telegraph.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,10 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB922A62A2685C600A005ED /* Build configuration list for PBXNativeTarget "Telegraph" */;
 			buildPhases = (
-				1EDD9253A92E629BF4CF86C3 /* [CP] Check Pods Manifest.lock */,
+				50A833D8EF3623609DA68C8C /* [CP] Check Pods Manifest.lock */,
 				0DB9228E2A2685C300A005ED /* Sources */,
 				0DB9228F2A2685C300A005ED /* Frameworks */,
 				0DB922902A2685C300A005ED /* Resources */,
+				7F2FD23CD7261A5D2950C8DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,13 +192,14 @@
 			files = (
 				0DB922A22A2685C600A005ED /* LaunchScreen.storyboard in Resources */,
 				0DB9229F2A2685C600A005ED /* Assets.xcassets in Resources */,
+				0DD9D76D2A2A700E001B1F3D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1EDD9253A92E629BF4CF86C3 /* [CP] Check Pods Manifest.lock */ = {
+		50A833D8EF3623609DA68C8C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,6 +219,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F2FD23CD7261A5D2950C8DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Telegraph/Pods-Telegraph-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Telegraph/Pods-Telegraph-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Telegraph/Pods-Telegraph-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -365,7 +386,7 @@
 		};
 		0DB922A72A2685C600A005ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7F6F8C7A503558AB7A10EC8 /* Pods-Telegraph.debug.xcconfig */;
+			baseConfigurationReference = 40B3CC4B779182EFB6C7D2DF /* Pods-Telegraph.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -393,7 +414,7 @@
 		};
 		0DB922A82A2685C600A005ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F605944185DC4D2D775BC333 /* Pods-Telegraph.release.xcconfig */;
+			baseConfigurationReference = FB293DDAFE440C2368DFF6D3 /* Pods-Telegraph.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
