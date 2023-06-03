@@ -31,6 +31,7 @@ class RegisterViewController: UIViewController {
         password.placeholder = "Password"
         password.backgroundColor = .white
         password.textAlignment = .center
+        password.isSecureTextEntry = true
         password.font = .systemFont(ofSize: 25)
         password.layer.shadowOffset = CGSize(width: 0, height: 10)
         password.layer.shadowOpacity = 0.2
@@ -55,9 +56,15 @@ class RegisterViewController: UIViewController {
     }()
     
     @objc func auntificationPressed() {
-        let email = emailTextField.text
-        handle = Auth.auth().addStateDidChangeListener { auth, user in
-          // ...
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let checkError = error {
+                    print(checkError.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+                    self.navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
         }
     }
     
