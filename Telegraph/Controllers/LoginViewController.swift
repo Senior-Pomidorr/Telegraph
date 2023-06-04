@@ -9,32 +9,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private let emailButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Email", for: .normal)
-        button.backgroundColor = .white
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.systemGray3, for: .normal)
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 0.2
-        button.layer.shadowRadius = 30
-        button.layer.cornerRadius = 30
-        return button
+    private let emailLogin: UITextField = {
+        let mailText = UITextField()
+        mailText.translatesAutoresizingMaskIntoConstraints = false
+        mailText.placeholder = "Email"
+        mailText.backgroundColor = .white
+        mailText.textAlignment = .center
+        mailText.font = .systemFont(ofSize: 25)
+        mailText.layer.shadowOffset = CGSize(width: 0, height: 3)
+        mailText.layer.shadowOpacity = 0.2
+        mailText.layer.shadowRadius = 30
+        mailText.layer.cornerRadius = 30
+        return mailText
     }()
     
-    private let passwordButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Password", for: .normal)
-        button.backgroundColor = .white
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.systemGray3, for: .normal)
-        button.layer.shadowOffset = CGSize(width: 0, height: 10)
-        button.layer.shadowOpacity = 0.2
-        button.layer.shadowRadius = 30
-        button.layer.cornerRadius = 30
-        return button
+    private let passwordLogin: UITextField = {
+        let password = UITextField()
+        password.translatesAutoresizingMaskIntoConstraints = false
+        password.placeholder = "Password"
+        password.font = .systemFont(ofSize: 25)
+        password.backgroundColor = .white
+        password.textAlignment = .center
+        password.isSecureTextEntry = true
+        password.layer.shadowOffset = CGSize(width: 0, height: 10)
+        password.layer.shadowOpacity = 0.2
+        password.layer.shadowRadius = 30
+        password.layer.cornerRadius = 30
+        return password
     }()
     
     private let registerButton: UIButton = {
@@ -70,23 +71,23 @@ class LoginViewController: UIViewController {
     
     func layout() {
         
-        view.addSubview(emailButton)
-        view.addSubview(passwordButton)
+        view.addSubview(emailLogin)
+        view.addSubview(passwordLogin)
         view.addSubview(registerButton)
         
         NSLayoutConstraint.activate([
             
-            emailButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            emailButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
-            emailButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
-            emailButton.heightAnchor.constraint(equalToConstant: 60),
+            emailLogin.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            emailLogin.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
+            emailLogin.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
+            emailLogin.heightAnchor.constraint(equalToConstant: 60),
             
-            passwordButton.topAnchor.constraint(equalTo: emailButton.bottomAnchor, constant: 16),
-            passwordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
-            passwordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
-            passwordButton.heightAnchor.constraint(equalToConstant: 60),
+            passwordLogin.topAnchor.constraint(equalTo: emailLogin.bottomAnchor, constant: 16),
+            passwordLogin.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
+            passwordLogin.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
+            passwordLogin.heightAnchor.constraint(equalToConstant: 60),
             
-            registerButton.topAnchor.constraint(equalTo: passwordButton.bottomAnchor, constant: 16),
+            registerButton.topAnchor.constraint(equalTo: passwordLogin.bottomAnchor, constant: 16),
             registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             registerButton.heightAnchor.constraint(equalToConstant: 60),
