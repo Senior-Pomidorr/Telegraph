@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         mailText.placeholder = "Email"
         mailText.backgroundColor = .white
         mailText.textAlignment = .center
+        mailText.text = "1@2.com"
         mailText.font = .systemFont(ofSize: 25)
         mailText.layer.shadowOffset = CGSize(width: 0, height: 3)
         mailText.layer.shadowOpacity = 0.2
@@ -32,6 +33,7 @@ class LoginViewController: UIViewController {
         password.backgroundColor = .white
         password.textAlignment = .center
         password.isSecureTextEntry = true
+        password.text = "123456"
         password.layer.shadowOffset = CGSize(width: 0, height: 10)
         password.layer.shadowOpacity = 0.2
         password.layer.shadowRadius = 30

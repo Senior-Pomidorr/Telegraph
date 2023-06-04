@@ -6,16 +6,23 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatViewController: UIViewController {
+    
+    var messages: [Message] = [
+        Message(sender: "1@2.com", body: "Hey!"),
+        Message(sender: "a@b.com", body: "Hello!"),
+        Message(sender: "1@2.com", body: "How are you?")
+    ]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
-        tableView.delegate = self
+        tableView.allowsSelection = false
+        tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ChatTableViewCell.self,
-                           forCellReuseIdentifier: ChatTableViewCell.identifier)
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "ReusebleCell")
         return tableView
     }()
     
@@ -41,14 +48,24 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "BrandPurple")
-        let logOut = UIBarButtonItem(title: "Log Out", style: .plain, target: #selector(logOut), action: .none)
+        title = "Telegraph"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        view.backgroundColor = UIColor(named: "BrandBlue")
+        let logOut = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
             navigationItem.rightBarButtonItem = logOut
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.hidesBackButton = true
         layout()
     }
     
     @objc func logOut() {
-        
+        do {
+          try Auth.auth().signOut()
+            print("logout")
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
     }
     
     private func layout() {
@@ -76,21 +93,22 @@ class ChatViewController: UIViewController {
     }
 }
 
-extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        messages.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.identifier, for: indexPath)
-                as? ChatTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReusebleCell", for: indexPath)
+                as? CustomTableViewCell else {
             fatalError()
         }
+        cell.label.text = messages[indexPath.row].body
         return cell
     }
-  
 }
+
+
+    
+

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9BEF922A2D183E00865100 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9BEF912A2D183E00865100 /* Message.swift */; };
+		0D9BEF952A2D295500865100 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9BEF932A2D295500865100 /* CustomTableViewCell.swift */; };
+		0D9BEF962A2D295500865100 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9BEF942A2D295500865100 /* CustomTableViewCell.xib */; };
 		0DB922962A2685C300A005ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922952A2685C300A005ED /* AppDelegate.swift */; };
 		0DB922982A2685C300A005ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922972A2685C300A005ED /* SceneDelegate.swift */; };
 		0DB9229F2A2685C600A005ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9229E2A2685C600A005ED /* Assets.xcassets */; };
@@ -15,13 +18,15 @@
 		0DB922AC2A2686D200A005ED /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922AB2A2686D200A005ED /* RegisterViewController.swift */; };
 		0DB922AE2A2686E500A005ED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922AD2A2686E500A005ED /* LoginViewController.swift */; };
 		0DB922B02A2686F400A005ED /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922AF2A2686F400A005ED /* ChatViewController.swift */; };
-		0DB922B32A27A5BF00A005ED /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922B22A27A5BF00A005ED /* ChatTableViewCell.swift */; };
 		0DB922B62A27BDD200A005ED /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB922B52A27BDD200A005ED /* Extensions.swift */; };
 		0DD9D76D2A2A700E001B1F3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DD9D76C2A2A700E001B1F3D /* GoogleService-Info.plist */; };
 		33463C36212475E2B95E0E50 /* libPods-Telegraph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EAB06877361CCB0D437C36 /* libPods-Telegraph.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D9BEF912A2D183E00865100 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0D9BEF932A2D295500865100 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		0D9BEF942A2D295500865100 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		0DB922922A2685C300A005ED /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB922952A2685C300A005ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB922972A2685C300A005ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +37,6 @@
 		0DB922AB2A2686D200A005ED /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0DB922AD2A2686E500A005ED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0DB922AF2A2686F400A005ED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		0DB922B22A27A5BF00A005ED /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		0DB922B52A27BDD200A005ED /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0DD9D76C2A2A700E001B1F3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26EAB06877361CCB0D437C36 /* libPods-Telegraph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telegraph.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D9BEF902A2D181E00865100 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D9BEF912A2D183E00865100 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0DB922892A2685C300A005ED = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +87,7 @@
 			children = (
 				0DB922952A2685C300A005ED /* AppDelegate.swift */,
 				0DB922972A2685C300A005ED /* SceneDelegate.swift */,
+				0D9BEF902A2D181E00865100 /* Model */,
 				0DB922B12A26872700A005ED /* Controllers */,
 				0DB922B42A27A70800A005ED /* CustomCell */,
 				0DB9229E2A2685C600A005ED /* Assets.xcassets */,
@@ -100,7 +113,8 @@
 		0DB922B42A27A70800A005ED /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				0DB922B22A27A5BF00A005ED /* ChatTableViewCell.swift */,
+				0D9BEF932A2D295500865100 /* CustomTableViewCell.swift */,
+				0D9BEF942A2D295500865100 /* CustomTableViewCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 			files = (
 				0DB922A22A2685C600A005ED /* LaunchScreen.storyboard in Resources */,
 				0DB9229F2A2685C600A005ED /* Assets.xcassets in Resources */,
+				0D9BEF962A2D295500865100 /* CustomTableViewCell.xib in Resources */,
 				0DD9D76D2A2A700E001B1F3D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,10 +263,11 @@
 				0DB922AE2A2686E500A005ED /* LoginViewController.swift in Sources */,
 				0DB922AC2A2686D200A005ED /* RegisterViewController.swift in Sources */,
 				0DB922B02A2686F400A005ED /* ChatViewController.swift in Sources */,
+				0D9BEF922A2D183E00865100 /* Message.swift in Sources */,
 				0DB922B62A27BDD200A005ED /* Extensions.swift in Sources */,
 				0DB922AA2A2686AA00A005ED /* WelcomeViewController.swift in Sources */,
+				0D9BEF952A2D295500865100 /* CustomTableViewCell.swift in Sources */,
 				0DB922962A2685C300A005ED /* AppDelegate.swift in Sources */,
-				0DB922B32A27A5BF00A005ED /* ChatTableViewCell.swift in Sources */,
 				0DB922982A2685C300A005ED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
