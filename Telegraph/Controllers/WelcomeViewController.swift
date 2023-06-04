@@ -12,9 +12,8 @@ class WelcomeViewController: UIViewController {
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Telegraph"
         label.textColor = UIColor(named: "BrandBlue")
-        label.font = .boldSystemFont(ofSize: 50)
+        label.font = .boldSystemFont(ofSize: 55)
         label.textAlignment = .center
         return label
     }()
@@ -50,9 +49,6 @@ class WelcomeViewController: UIViewController {
     @objc func tapLogIn() {
         let logVC = LoginViewController()
         self.navigationController?.pushViewController(logVC, animated: true)
-        
-//        logVC.modalPresentationStyle = .automatic
-//        present(logVC, animated: true)
     }
     
     override func viewDidLoad() {

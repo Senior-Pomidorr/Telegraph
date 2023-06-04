@@ -42,7 +42,13 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BrandPurple")
+        let logOut = UIBarButtonItem(title: "Log Out", style: .plain, target: #selector(logOut), action: .none)
+            navigationItem.rightBarButtonItem = logOut
         layout()
+    }
+    
+    @objc func logOut() {
+        
     }
     
     private func layout() {
@@ -86,7 +92,5 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
-    
+  
 }

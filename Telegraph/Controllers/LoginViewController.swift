@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -38,7 +39,7 @@ class LoginViewController: UIViewController {
         return password
     }()
     
-    private let registerButton: UIButton = {
+    private lazy var registerButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Log In", for: .normal)
@@ -49,8 +50,22 @@ class LoginViewController: UIViewController {
         button.layer.shadowOpacity = 0.2
         button.layer.shadowRadius = 30
         button.layer.cornerRadius = 30
+        button.addTarget(self, action: #selector(pressLogin), for: .touchUpInside)
         return button
     }()
+    
+    @objc func pressLogin() {
+        if let email = emailLogin.text, let password = passwordLogin.text {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let chechError = error {
+                    print(chechError.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+                    self.navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
