@@ -16,6 +16,8 @@ class ChatViewController: UIViewController {
         Message(sender: "1@2.com", body: "How are you?")
     ]
     
+    let db = Firestore.firestore()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
@@ -37,14 +39,27 @@ class ChatViewController: UIViewController {
         return text
     }()
     
-    private let buttonPush: UIButton = {
+    private lazy var buttonPush: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
     
+    @objc func sendMessage() {
+        if let messageBody = textFieldMessage.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection(K.collectionName).addDocument(data: [K.senderField : messageSender, K.bodyField : messageBody]) { (error) in
+                if let checkEroor = error {
+                    print(checkEroor.localizedDescription)
+                } else {
+                    print("Seccessfully save data")
+                }
+            }
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
