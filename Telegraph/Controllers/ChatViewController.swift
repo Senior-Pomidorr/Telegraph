@@ -10,11 +10,7 @@ import Firebase
 
 class ChatViewController: UIViewController {
     
-    var messages: [Message] = [
-        Message(sender: "1@2.com", body: "Hey!"),
-        Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "How are you?")
-    ]
+    var messages: [Message] = []
     
     let db = Firestore.firestore()
     
@@ -50,11 +46,18 @@ class ChatViewController: UIViewController {
     
     @objc func sendMessage() {
         if let messageBody = textFieldMessage.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection(K.collectionName).addDocument(data: [K.senderField : messageSender, K.bodyField : messageBody]) { (error) in
+            db.collection(K.collectionName).addDocument(data: [
+                K.senderField: messageSender,
+                K.bodyField: messageBody,
+                K.dataField: Date().timeIntervalSince1970
+            ]) { (error) in
                 if let checkEroor = error {
                     print(checkEroor.localizedDescription)
                 } else {
                     print("Seccessfully save data")
+                    DispatchQueue.main.async {
+                        self.textFieldMessage.text = ""
+                    }
                 }
             }
         }
@@ -69,8 +72,35 @@ class ChatViewController: UIViewController {
         let logOut = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
             navigationItem.rightBarButtonItem = logOut
         navigationController?.navigationBar.prefersLargeTitles = false
+        
         navigationItem.hidesBackButton = true
+        loadMessages()
         layout()
+    }
+    
+    func loadMessages() {
+        
+        db.collection(K.collectionName).order(by: K.dataField).addSnapshotListener { (querySnapshot, error) in
+            self.messages = []
+            if let checkErorr = error {
+                print(checkErorr.localizedDescription)
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let messageSender = data[K.senderField] as? String, let messageBody = data[K.bodyField] as? String {
+                            let newMassage = Message(sender: messageSender, body: messageBody)
+                            self.messages.append(newMassage)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                                let indexPath = IndexPath(row: self.messages.count - 1 , section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @objc func logOut() {
@@ -115,11 +145,20 @@ extension ChatViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReusebleCell", for: indexPath)
                 as? CustomTableViewCell else {
             fatalError()
         }
-        cell.label.text = messages[indexPath.row].body
+        cell.label.text = message.body
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: "BackgroundColor")
+        }
         return cell
     }
 }

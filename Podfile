@@ -9,5 +9,6 @@ target 'Telegraph' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseCore', :modular_headers => true
-
+  pod 'IQKeyboardManagerSwift'
+  
 end
